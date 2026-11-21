@@ -1,0 +1,25 @@
+SENSITIVITY AND ROBUSTNESS REPORT
+Student: Espiritu (TUPM-26-1945)
+Random Seed: 261945
+Selected Features: Feature_058, Feature_059, Feature_162, Feature_541, Feature_567
+Bootstrap Repetitions: 250 (stratified, with replacement)
+Strategies: Available-Case vs Median Imputation (full dataset)
+
+Per-feature results (Fail - Pass mean difference):
+- Feature_058: A=0.0192 [0.0048, 0.0337] rank 2 | B=0.0188 [0.0047, 0.0337] rank 2
+- Feature_059: A=5.9517 [4.2390, 7.9239] rank 1 | B=5.9594 [4.2466, 7.9257] rank 1
+- Feature_162: A=-154.0611 [-1156.6251, 1073.7839] rank 5 | B=-179.5834 [-1170.5317, 1060.0296] rank 5
+- Feature_541: A=0.2880 [-0.2694, 0.9476] rank 4 | B=0.2887 [-0.2678, 0.9477] rank 4
+- Feature_567: A=0.0062 [-0.0020, 0.0166] rank 3 | B=0.0041 [-0.0025, 0.0126] rank 3
+
+Largest Change in Mean Difference: 25.5223 (Feature_162)
+Features with Changed Difference Sign: 0
+Features with Changed Ranking: 0
+Features with Changed CI Conclusion (includes 0): 0
+Reproducibility Verified: True
+
+Interpretation:
+- Median imputation fills missing values with a constant, which can shrink variability and shift group means compared with available-case analysis.
+- A CI that includes zero means the group difference is not clearly separated from sampling variability.
+- Group differences are descriptive and do not establish causes of failure.
+- Features whose sign, CI conclusion or rank change between strategies are sensitive to the preparation method.
